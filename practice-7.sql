@@ -16,4 +16,8 @@
 -- | Entire townhouse                    | 3588     | 2021-10-17                 |
 -- | Entire villa                        | 75       | 2021-10-12                 |
 
+SELECT listings.property_type, COUNT(reviews.id), MAX(reviews.date_reviewed)
+FROM listings INNER JOIN reviews ON reviews.listing_id == listings.id
+GROUP BY listings.property_type;
 
+-- Sweet! This took way less time than learning R for the marketing class. Thanks to Prof. Eng (everything was super clear and engaging!)
